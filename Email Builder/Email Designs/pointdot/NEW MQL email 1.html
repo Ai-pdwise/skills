@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <!-- Dark Mode Meta Tags -->
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <title>pointdot</title>
+  
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  
+  <style>
+    /* Dark Mode Prevention */
+    :root {
+      color-scheme: light;
+      supported-color-schemes: light;
+    }
+    
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+    
+    /* Typography - Aeonik Pro fallbacks */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+    
+    .body-text {
+      font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1e1e1e;
+    }
+    
+    .heading {
+      font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #1e1e1e;
+    }
+    
+    .subheading {
+      font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: #444342;
+    }
+    
+    .label {
+      font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.4;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #7a7876;
+    }
+    
+    .cta-button {
+      font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #1e1e1e;
+      padding: 16px 32px;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 0;
+    }
+    
+    .cta-button:hover {
+      background-color: #a78423;
+    }
+    
+    .footer-text {
+      font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #7a7876;
+    }
+    
+    .footer-link {
+      color: #7a7876;
+      text-decoration: underline;
+    }
+    
+    .footer-link:hover {
+      color: #a78423;
+    }
+    
+    /* Responsive - minimal changes only */
+    @media screen and (max-width: 600px) {
+      .email-container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .content-padding {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+    
+    /* ========================================
+       DARK MODE PROTECTION
+       Keep white background, dark text, grey links
+       ======================================== */
+    
+    @media (prefers-color-scheme: dark) {
+      body, table, td { 
+        background-color: #ffffff !important; 
+      }
+      h1, h2, h3, h4, h5, h6, p, td, div, span { 
+        color: #1e1e1e !important; 
+      }
+      a { 
+        color: #7a7876 !important; 
+      }
+      /* Swap logos in dark mode */
+      .logo-light { 
+        display: none !important; 
+      }
+      .logo-dark { 
+        display: block !important; 
+      }
+    }
+    
+    /* Gmail/Outlook App Dark Mode */
+    [data-ogsc] body,
+    [data-ogsc] table,
+    [data-ogsc] td { 
+      background-color: #ffffff !important; 
+    }
+    [data-ogsc] p,
+    [data-ogsc] td,
+    [data-ogsc] div { 
+      color: #1e1e1e !important; 
+    }
+    [data-ogsc] a { 
+      color: #7a7876 !important; 
+    }
+    [data-ogsc] .logo-light { 
+      display: none !important; 
+    }
+    [data-ogsc] .logo-dark { 
+      display: block !important; 
+    }
+    
+    [data-ogsb] body,
+    [data-ogsb] table,
+    [data-ogsb] td { 
+      background-color: #ffffff !important; 
+    }
+    [data-ogsb] p { 
+      color: #1e1e1e !important; 
+    }
+    [data-ogsb] a { 
+      color: #7a7876 !important; 
+    }
+    [data-ogsb] .logo-light { 
+      display: none !important; 
+    }
+    [data-ogsb] .logo-dark { 
+      display: block !important; 
+    }
+  </style>
+<!-- outlook-fixes-applied --></head>
+
+<body class="body-bg email-bg" style="margin: 0; padding: 0; background-color: #ffffff;">
+  
+  <!-- Visually Hidden Preheader Text -->
+  <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+    Harnessing the power of the marketing ecosystem — Your point of difference.
+  </div>
+  
+  <!-- Email Wrapper -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="wrapper-bg email-bg" style="background-color: #ffffff;">
+    <tr>
+      <td align="center" class="wrapper-bg" style="padding: 40px 16px; background-color: #ffffff;">
+        
+        <!-- Email Container -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" class="email-container container-bg" style="max-width: 560px; width: 100%; background-color: #ffffff;">
+          
+          <!-- Header with Logo -->
+          <tr>
+            <td align="center" style="padding: 0 0 40px 0;">
+              <a href="https://pointdot.com.au" target="_blank" style="text-decoration: none;">
+                                <!-- Light mode logo (black) -->
+                <img src="https://assets.cdn.filesafe.space/gMGCFsfRwgCmewdPK2pI/media/69b5417bbfc81f5e8e0ee206.png" alt="pointdot" width="160" class="logo-light" style="display: block; width: 160px; max-width: 160px; height: auto;">
+                <!-- Dark mode logo (white) - hidden by default -->
+                <img src="https://assets.cdn.filesafe.space/gMGCFsfRwgCmewdPK2pI/media/69b5417beba4874f5c42de52.png" alt="pointdot" width="160" class="logo-dark" style="display: none; width: 160px; max-width: 160px; height: auto;">
+              </a>
+            </td>
+          </tr>
+          
+          <!-- Hero Image -->
+          <tr>
+            <td align="center" style="padding: 0 0 40px 0;">
+              <img src="https://assets.cdn.filesafe.space/gMGCFsfRwgCmewdPK2pI/media/69b5509f277ba04270f1d3a7.png" alt="Pointdot Team" width="560" style="display: block; width: 100%; max-width: 560px; height: auto;">
+            </td>
+          </tr>
+          
+          <!-- Greeting -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 16px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                Hello {{contact.first_name}},
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Body Copy -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                Thanks for reaching out to Pointdot.
+              </p>
+            </td>
+          </tr>
+          
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                If you are here, chances are your marketing feels fragmented.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Bullet Points -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.8; color: #1e1e1e;">
+                → Ads running without a clear conversion path.<br>
+                → A website that looks good but does not perform.<br>
+                → Content being published without driving real growth.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Emphasis -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                This is exactly what we fix.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Closing Copy -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 32px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                At Pointdot, we build connected marketing ecosystems where acquisition, conversion, and retention work together as one system.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Second Image -->
+          <tr>
+            <td align="center" style="padding: 0 0 32px 0;">
+              <img src="https://assets.cdn.filesafe.space/gMGCFsfRwgCmewdPK2pI/media/69b5509fcab7f7db91ce2db7.png" alt="Our team will be in touch" width="560" style="display: block; width: 100%; max-width: 560px; height: auto;">
+            </td>
+          </tr>
+          
+          <!-- Section 2: What is the point -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                What is the point of all this?
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Bullet Points 2 -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.8; color: #1e1e1e;">
+                → Most agencies sell individual services.<br>
+                → We build the system behind growth.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Marketing silos -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                Marketing does not work in silos.
+              </p>
+              <p style="margin: 8px 0 0 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                Ads, websites, content, and follow-up must be connected or performance breaks down.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Team in touch -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                Our team will be in touch shortly to understand where your ecosystem is leaking and what it will take to build something predictable, scalable, and aligned.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Explore work -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 20px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                In the meantime, explore our work and see what integrated marketing looks like when it is done properly.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Sign off -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 0 40px 40px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+                Chat soon! 👋
+              </p>
+            </td>
+          </tr>
+          
+          <!-- CTA Button -->
+          <tr>
+            <td align="center" style="padding: 0 40px 48px 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td align="center">
+                    <a href="https://link.pdwise.com.au/widget/bookings/pointdotclaritycall" target="_blank" class="cta-button" style="font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; line-height: 1; letter-spacing: 0.09em; text-transform: uppercase; color: #ffffff; background-color: #1e1e1e; padding: 16px 32px; text-decoration: none; display: inline-block; white-space: nowrap;">
+                      ▸ Discover Your Point of Difference
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Divider -->
+          <tr>
+            <td align="center" style="padding: 0 40px 40px 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="border-top: 1px solid #e2dfdd;"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Footer Logo -->
+          <tr>
+            <td align="center" style="padding: 0 0 24px 0;">
+              <a href="https://pointdot.com.au" target="_blank" style="text-decoration: none;">
+                <!-- Light mode logo (black) -->
+                <img src="https://assets.cdn.filesafe.space/gMGCFsfRwgCmewdPK2pI/media/69b5417bbfc81f0cce0ee205.png" alt="pointdot" width="80" class="logo-light" style="display: block; width: 80px; max-width: 80px; height: auto; opacity: 0.6;">
+                <!-- Dark mode logo (white) - hidden by default -->
+                <img src="https://assets.cdn.filesafe.space/gMGCFsfRwgCmewdPK2pI/media/69b5417b277ba0f9a7f0629e.png" alt="pointdot" width="80" class="logo-dark" style="display: none; width: 80px; max-width: 80px; height: auto; opacity: 0.6;">
+              </a>
+            </td>
+          </tr>
+          
+          <!-- Footer Links -->
+          <tr>
+            <td align="center" style="padding: 0 40px 16px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; line-height: 1.5; color: #7a7876; white-space: nowrap;">
+                <a href="https://pointdot.com.au/privacy-policy" target="_blank" style="color: #7a7876 !important; text-decoration: underline;; mso-style-textfill-fill-color: #7a7876;"><!--[if mso]><font color="#7a7876"><![endif]-->Privacy Policy<!--[if mso]></font><![endif]--></a>
+                <span style="color: #7a7876;">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+                <a href="https://www.pointdot.com.au/terms-conditions/" target="_blank" style="color: #7a7876 !important; text-decoration: underline;; mso-style-textfill-fill-color: #7a7876;"><!--[if mso]><font color="#7a7876"><![endif]-->Terms & Conditions<!--[if mso]></font><![endif]--></a>
+                <span style="color: #7a7876;">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+                <a href="{{unsubscribe_link}}" target="_blank" style="color: #7a7876 !important; text-decoration: underline;; mso-style-textfill-fill-color: #7a7876;"><!--[if mso]><font color="#7a7876"><![endif]-->Unsubscribe<!--[if mso]></font><![endif]--></a>
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Copyright -->
+          <tr>
+            <td align="center" style="padding: 0 40px 8px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; line-height: 1.5; color: #7a7876;">
+                © 2026 pointdot. All rights reserved.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Address - wrapped in anchor-like span to prevent auto-linking -->
+          <tr>
+            <td align="center" style="padding: 0 40px 16px 40px;">
+              <p style="margin: 0; font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; line-height: 1.5; color: #7a7876;">
+                <!--[if mso]><span style="color: #7a7876;"><![endif]-->
+                <span style="color: #7a7876 !important; text-decoration: none !important;">Visit us at 106 Homer Street, Earlwood NSW 2206</span>
+                <!--[if mso]></span><![endif]-->
+              </p>
+            </td>
+          </tr>
+          
+          <!-- View in Browser -->
+          <tr>
+            <td align="center" style="padding: 0 40px 40px 40px;">
+              <a href="{{email.viewInBrowser}}" target="_blank" style="font-family: 'Aeonik Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; line-height: 1.5; color: #7a7876; text-decoration: underline;">View this email in browser</a>
+            </td>
+          </tr>
+          
+        </table>
+        <!-- End Email Container -->
+        
+      </td>
+    </tr>
+  </table>
+  <!-- End Email Wrapper -->
+  
+</body>
+</html>

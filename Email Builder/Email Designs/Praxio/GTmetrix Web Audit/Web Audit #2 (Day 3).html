@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <title>What a 5-second load time actually costs you</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+
+    /* Dark Mode Prevention */
+    :root {
+      color-scheme: light;
+      supported-color-schemes: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body, table, td { background-color: #ffffff !important; }
+      h1, h2, h3, h4, h5, h6, p, td, div, span { color: #1e1e1e !important; }
+      a { color: #7a7876 !important; }
+    }
+
+    [data-ogsc] body, [data-ogsc] table, [data-ogsc] td { background-color: #ffffff !important; }
+    [data-ogsc] p, [data-ogsc] td, [data-ogsc] div { color: #1e1e1e !important; }
+    [data-ogsc] a { color: #7a7876 !important; }
+
+    [data-ogsb] body, [data-ogsb] table, [data-ogsb] td { background-color: #ffffff !important; }
+    [data-ogsb] p { color: #1e1e1e !important; }
+    [data-ogsb] a { color: #7a7876 !important; }
+
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+      .email-container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .content-padding {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+      .stats-stack td {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-left: none !important;
+        padding: 12px 0 !important;
+      }
+      .before-after td {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding-bottom: 16px !important;
+      }
+      .before-after img {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #ffffff; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+
+<!-- Preheader -->
+<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+  One of our clients went from 20 seconds to 1.9. Here's what happened next.
+  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+</div>
+
+<!-- Email Wrapper -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff;">
+  <tr>
+    <td align="center" style="padding: 40px 16px;">
+
+      <!-- Email Container -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" class="email-container" style="max-width: 560px; width: 100%;">
+
+        <!-- Header: Praxio Logo -->
+        <tr>
+          <td align="center" style="padding: 0 0 32px 0;">
+            <a href="https://praxio.com.au" target="_blank" style="text-decoration: none;">
+              <img src="https://assets.cdn.filesafe.space/jqH2XqYeXeZ4UdbLjFRj/media/69bbc9f0ecd8b3856fa96885.png" alt="Praxio" width="140" style="display: block; width: 140px; max-width: 140px; height: auto;">
+            </a>
+          </td>
+        </tr>
+
+        <!-- Hero Image -->
+        <tr>
+          <td align="center" style="padding: 0 0 32px 0;">
+            <img src="https://assets.cdn.filesafe.space/jqH2XqYeXeZ4UdbLjFRj/media/69bbc9727c878d37f64511c6.png" alt="Praxio Website Performance Report" width="560" style="display: block; width: 100%; max-width: 560px; height: auto; border-radius: 8px;">
+          </td>
+        </tr>
+
+        <!-- Greeting -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              Hi {{contact.first_name}},
+            </p>
+          </td>
+        </tr>
+
+        <!-- Body: Opener -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              When conversions drop, the first thing people check is the ads.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              Usually the ads are fine. The problem is the page they're sending traffic to.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Body: Case Study 1 Intro -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              Real example.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              A health and wellness clinic, mybodi, was spending thousands on Meta ads each month. Their website took over 20 seconds to load. Visitors clicked, waited, and left before the page finished rendering.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              We moved their site to faster infrastructure and cleaned up the build. Load time dropped to 1.9 seconds. Online bookings went up 67%. They didn't spend an extra dollar on ads.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Before / After GTmetrix Screenshots -->
+        <tr>
+          <td style="padding: 0 40px 8px 40px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr class="before-after">
+                <td width="48%" valign="top" style="text-align: center;">
+                  <p style="margin: 0 0 8px 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; color: #c0392b; text-transform: uppercase;">
+                    Before
+                  </p>
+                  <img src="https://assets.cdn.filesafe.space/jqH2XqYeXeZ4UdbLjFRj/media/69bbd9e37e33ef145c6fcbff.png" alt="mybodi GTmetrix score before: Grade F, 27% performance" width="228" style="display: block; width: 100%; max-width: 228px; height: auto; border-radius: 6px; border: 1px solid #e2dfdd;">
+                </td>
+                <!-- Spacer -->
+                <td width="4%"></td>
+                <!-- After -->
+                <td width="48%" valign="top" style="text-align: center;">
+                  <p style="margin: 0 0 8px 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; color: #27ae60; text-transform: uppercase;">
+                    After
+                  </p>
+                  <img src="https://assets.cdn.filesafe.space/jqH2XqYeXeZ4UdbLjFRj/media/69bbd9e3f0ceb92f2f10d3bb.png" alt="mybodi GTmetrix score after: Grade A, 98% performance" width="228" style="display: block; width: 100%; max-width: 228px; height: auto; border-radius: 6px; border: 1px solid #e2dfdd;">
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Stats Row: Case Study 1 -->
+        <tr>
+          <td style="padding: 0 40px 30px 40px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f8fafa; border-radius: 8px;">
+              <tr class="stats-stack">
+                <td width="33%" align="center" valign="top" style="padding: 16px 8px;">
+                  <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #00BEED; line-height: 1.2;">
+                    20.3s &rarr; 1.9s
+                  </p>
+                  <p style="margin: 6px 0 0 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #7a7876; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Load Time
+                  </p>
+                </td>
+                <td width="33%" align="center" valign="top" style="padding: 16px 8px; border-left: 1px solid #e2dfdd;">
+                  <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #00BEED; line-height: 1.2;">
+                    +67%
+                  </p>
+                  <p style="margin: 6px 0 0 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #7a7876; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Bookings
+                  </p>
+                </td>
+                <td width="33%" align="center" valign="top" style="padding: 16px 8px; border-left: 1px solid #e2dfdd;">
+                  <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #00BEED; line-height: 1.2;">
+                    $0
+                  </p>
+                  <p style="margin: 6px 0 0 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #7a7876; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Extra Ad Spend
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Pull Quote Stripe -->
+        <tr>
+          <td style="padding: 0 0 30px 0;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #002237;">
+              <tr>
+                <td style="padding: 24px 40px;" align="center">
+                  <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 17px; font-weight: 500; line-height: 1.5; color: #ffffff; letter-spacing: -0.01em;">
+                    Same traffic. Same ads. Same budget.<br>The only thing that changed was the website.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Body: Your Report -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              Your report shows where your site sits right now:
+            </p>
+          </td>
+        </tr>
+
+        <!-- CTA: View Report -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 28px 40px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="left">
+                  <a href="{{contact.audit_report_url}}" target="_blank" style="font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; line-height: 1; letter-spacing: 0.09em; text-transform: uppercase; color: #ffffff; background-color: #002237; padding: 16px 32px; text-decoration: none; display: inline-block; white-space: nowrap;">
+                    ▸ VIEW YOUR REPORT
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Body: Pivot / Last Ask -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: #1e1e1e;">
+              This is the last time we'll push on this. If you want to walk through the findings, the call is 15 minutes with Kosta, one of our founders.
+            </p>
+          </td>
+        </tr>
+
+        <!-- CTA: Book Call -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="left">
+                  <a href="https://link.pdwise.com.au/widget/booking/huOcbKfS20zYCrhWjjZH" target="_blank" style="font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; line-height: 1; letter-spacing: 0.09em; text-transform: uppercase; color: #ffffff; background-color: #00BEED; padding: 16px 32px; text-decoration: none; display: inline-block; white-space: nowrap;">
+                    ▸ SEE WHAT'S FIXABLE
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Body: Phase shift note -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 20px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #7a7876;">
+              After this, we'll just send useful stuff. No more booking reminders.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Signature Block -->
+        <tr>
+          <td align="left" class="content-padding" style="padding: 0 40px 48px 40px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td valign="middle" style="padding-right: 16px;">
+                  <div style="width: 56px; height: 56px; border-radius: 50%; overflow: hidden;">
+                    <img src="https://assets.cdn.filesafe.space/jqH2XqYeXeZ4UdbLjFRj/media/69bbd7ffa37cc2338eff7cfe.jpg" alt="Kosta" width="56" height="56" style="display: block; width: 56px; height: 56px; object-fit: cover; object-position: center 5%;">
+                  </div>
+                </td>
+                <td valign="middle">
+                  <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.4; color: #002237;">
+                    Kosta
+                  </p>
+                  <p style="margin: 2px 0 0 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 1.4; color: #7a7876;">
+                    Co-Founder, Praxio
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td align="center" style="padding: 0 40px 40px 40px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td style="border-top: 1px solid #e2dfdd;"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Footer Logo -->
+        <tr>
+          <td align="center" style="padding: 0 0 24px 0;">
+            <a href="https://praxio.com.au" target="_blank" style="text-decoration: none;">
+              <img src="https://praxio.com.au/wp-content/uploads/2025/10/Logo-1-1.png" alt="Praxio" width="80" style="display: block; width: 80px; max-width: 80px; height: auto; opacity: 0.6;">
+            </a>
+          </td>
+        </tr>
+
+        <!-- Footer Links -->
+        <tr>
+          <td align="center" style="padding: 0 40px 16px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; line-height: 1.5; color: #7a7876; white-space: nowrap;">
+              <a href="https://praxio.com.au/privacy-policy" target="_blank" style="color: #7a7876 !important; text-decoration: underline;">Privacy Policy</a>
+              <span style="color: #7a7876;">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+              <a href="https://praxio.com.au/terms-and-conditions/" target="_blank" style="color: #7a7876 !important; text-decoration: underline;">Terms &amp; Conditions</a>
+              <span style="color: #7a7876;">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+              <a href="{{unsubscribe_link}}" target="_blank" style="color: #7a7876 !important; text-decoration: underline;">Unsubscribe</a>
+            </p>
+          </td>
+        </tr>
+
+        <!-- Copyright -->
+        <tr>
+          <td align="center" style="padding: 0 40px 40px 40px;">
+            <p style="margin: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; line-height: 1.5; color: #7a7876;">
+              &copy; 2026 Praxio. All rights reserved.
+            </p>
+          </td>
+        </tr>
+
+      <!-- End Email Container -->
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
